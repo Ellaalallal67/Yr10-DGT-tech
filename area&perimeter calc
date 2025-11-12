@@ -1,0 +1,30 @@
+
+keep_looping =""
+while keep_looping =="":
+    try:
+        error = "please enter a valid number more than 0 \n"
+        width = int(input("width: "))
+        print(f"Your width is {width}")
+        height = int(input("height: "))
+        print(f"Your height is {height}")
+        
+        perimeter = 2*(width + height)
+        area = width*height
+
+        print()
+        print(f"perimeter: {perimeter} units; area: {area} square units. \n")
+        loop = input("Press <ENTER> to continue, or any other key to quit.")
+        
+        if width < 0:
+            print(error)
+        
+        if height < 0:
+            print(error)
+
+    except ValueError:
+        print(error)
+        
+        if loop =="":
+            continue
+        else:
+            keep_looping = "stop_loop"
